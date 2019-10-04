@@ -1,0 +1,34 @@
+## Install Java
+sudo yum install java
+
+## To download and install Jenkins: 
+1. To ensure that your software packages are up to date on your instance, use the following command to perform a quick software update: 
+[ec2-user ~]$ sudo yum update –y 
+
+2. Add the Jenkins repo using the following command: 
+[ec2-user ~]$sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+
+3. Import a key file from Jenkins-CI to enable installation from the package: 
+[ec2-user ~]$ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+
+4. Install Jenkins: 
+[ec2-user ~]$ sudo yum install jenkins -y 
+
+5. Start Jenkins as a service: 
+[ec2-user ~]$ sudo service jenkins start
+
+Start/Stop
+• sudo service jenkins start/stop/restart
+• sudo chkconfig jenkins on
+
+## Status
+sudo service jenkins status
+
+## Access Jenkins on web browser:
+<Server instance public DNS>:8080
+
+
+To unlock Jenkins:
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
